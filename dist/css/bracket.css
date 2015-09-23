@@ -6,49 +6,242 @@
 body {
   background: url("../../assets/actionshot.jpg") center center no-repeat;
   background-size: cover;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif; }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 37.5px;
+  background: #333333;
+  z-index: 1;
+  border-bottom: solid 1px white; }
+  nav ul {
+    list-style-type: none;
+    position: absolute;
+    left: 100px; }
+  nav li {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    cursor: pointer; }
+  nav .link-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold; }
 
 header {
-  height: 95vh;
+  height: 100vh;
   position: relative;
   background: rgba(204, 204, 204, 0.9); }
 
 main {
   min-height: 100vh;
-  position: relative;
-  background: rgba(51, 51, 51, 0.95); }
+  position: relative; }
 
-.bracket-view {
-  font-size: 0px; }
-  .bracket-view.tournament-rounds-4 .round {
-    width: 25%; }
-  .bracket-view .round {
-    display: inline-block;
-    vertical-align: top;
-    position: relative; }
-  .bracket-view .round-of-8 .match {
-    height: calc(100vh / 4); }
-  .bracket-view .round-of-4 .match {
-    height: calc(100vh / 2); }
-  .bracket-view .round-of-2 .match {
-    height: calc(100vh / 1); }
-  .bracket-view .match {
-    height: calc(100vh / 8);
-    position: relative;
-    left: 7.5%;
-    width: 85%;
-    padding: 0; }
-  .bracket-view .player {
-    position: absolute;
-    top: calc(50% - .75em);
-    padding: 0 10px;
-    transform: translateY(-50%);
-    width: 100%;
+.tournament-container {
+  min-height: 100vh;
+  position: relative;
+  background: #333333; }
+
+.tournament {
+  background: #333333;
+  font-size: 0px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.bracket-view.tournament-rounds-3 .round {
+  width: 33.33333%; }
+
+.bracket-view.tournament-rounds-4 .round {
+  width: 25%; }
+
+.bracket-view.tournament-rounds-5 .round {
+  width: 20%; }
+
+.bracket-view.tournament-rounds-6 .round {
+  width: 16.66667%; }
+
+.bracket-view .round {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-top: 24px; }
+  .bracket-view .round:before {
+    content: attr(data-title);
     font-size: 18px;
-    color: black;
-    height: 1.5em;
-    line-height: 1.5em;
-    background: #c9c9c9; }
-    .bracket-view .player:last-child {
-      border-top: solid 1px black;
-      top: calc(50% + .75em); }
+    text-transform: uppercase;
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -24px; }
+
+.bracket-view .round-1 .match {
+  height: 72px; }
+
+.bracket-view .round-2 .match {
+  height: 144px; }
+
+.bracket-view .round-3 .match {
+  height: 288px; }
+
+.bracket-view .round-4 .match {
+  height: 576px; }
+
+.bracket-view .round-5 .match {
+  height: 1152px; }
+
+.bracket-view .round-6 .match {
+  height: 2304px; }
+
+.bracket-view .match {
+  position: relative;
+  left: 7.5%;
+  width: 85%;
+  padding: 0; }
+
+.bracket-view .player {
+  position: absolute;
+  top: calc(50% - .75em);
+  transform: translateY(-50%);
+  width: 100%;
+  padding-left: 10px;
+  font-size: 15px;
+  color: black;
+  height: 24px;
+  line-height: 24px;
+  background: rgba(204, 204, 204, 0.7); }
+  .bracket-view .player:last-child {
+    border-top: solid 1px black;
+    top: calc(50% + .75em); }
+    .bracket-view .player:last-child:after {
+      height: 23px; }
+  .bracket-view .player:after {
+    content: attr(data-score);
+    float: right;
+    background: white;
+    width: 30px;
+    padding-right: 5px;
+    text-align: right;
+    box-sizing: border-box;
+    border-left: solid 1px black;
+    height: 24px;
+    line-height: 24px; }
+
+.bracket-view .winner {
+  font-weight: bold; }
+  .bracket-view .winner:after {
+    background: #ace1af; }
+
+.bracket-view.tournament-seeded .player {
+  padding-left: 35px; }
+  .bracket-view.tournament-seeded .player:last-child[data-seed]:before {
+    height: 23px; }
+  .bracket-view.tournament-seeded .player[data-seed] {
+    padding-left: 0; }
+    .bracket-view.tournament-seeded .player[data-seed]:before {
+      content: attr(data-seed);
+      width: 30px;
+      padding-left: 5px;
+      float: left;
+      background: #45b1e8;
+      margin-right: 5px;
+      box-sizing: border-box;
+      border-right: solid 1px black;
+      height: 24px;
+      line-height: 24px;
+      font-weight: normal; }
+
+.matches-view .round {
+  margin: 72px;
+  margin-top: 108px;
+  position: relative; }
+  .matches-view .round:before {
+    content: attr(data-title);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: -36px; }
+
+.matches-view .match {
+  width: 60%;
+  margin: 10px auto;
+  font-size: 0px; }
+
+.matches-view .player {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - 2px);
+  margin-right: 2px;
+  padding-left: 10px;
+  font-size: 15px;
+  color: black;
+  height: 24px;
+  line-height: 24px;
+  background: rgba(204, 204, 204, 0.7); }
+  .matches-view .player:last-child {
+    padding-left: 0;
+    padding-right: 10px;
+    text-align: right; }
+    .matches-view .player:last-child:after {
+      float: left; }
+  .matches-view .player:after {
+    content: attr(data-score);
+    float: right;
+    background: white;
+    width: 35px;
+    text-align: center;
+    box-sizing: border-box;
+    border-left: solid 1px black;
+    height: 24px;
+    line-height: 24px; }
+
+.matches-view .winner {
+  font-weight: bold; }
+  .matches-view .winner:after {
+    background: #ace1af; }
+
+.matches-view.tournament-seeded .player {
+  padding-left: 35px; }
+  .matches-view.tournament-seeded .player:last-child {
+    padding-left: 0;
+    padding-right: 35px; }
+    .matches-view.tournament-seeded .player:last-child[data-seed] {
+      padding-right: 0; }
+      .matches-view.tournament-seeded .player:last-child[data-seed]:before {
+        float: right;
+        padding-left: 5px;
+        margin-left: 5px;
+        border-left: solid 1px black;
+        margin-right: 0; }
+  .matches-view.tournament-seeded .player[data-seed] {
+    padding-left: 0; }
+    .matches-view.tournament-seeded .player[data-seed]:before {
+      content: attr(data-seed);
+      float: left;
+      font-weight: normal;
+      background: #45b1e8;
+      width: 30px;
+      padding-right: 5px;
+      margin-right: 5px;
+      text-align: right;
+      box-sizing: border-box;
+      border-right: solid 1px black;
+      height: 24px;
+      line-height: 24px; }

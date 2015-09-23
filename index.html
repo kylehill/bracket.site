@@ -2,104 +2,132 @@
 <html>
 <head>
   <title>Bracket Demo</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="dist/css/bracket.css" />
 </head>
 <body>
+
+  <nav>
+    <ul>
+      <li data-link="bracket">
+        <div class="link-container">Bracket</div>
+      </li>
+      <li data-link="matches">
+        <div class="link-container">Matches</div>
+      </li>
+    </ul>
+  </nav>
 
   <header>
   </header>
 
   <main>
 
-    <section class="tournament tournament-rounds-4 bracket-view">
+    <section class="tournament-container">
 
-      <div class="round round-of-16">
+      <div class="tournament tournament-rounds-4 tournament-seeded bracket-view">
 
-        <div class="match">
-          <div class="player">Mario</div>
-          <div class="player">Donkey Kong</div>
+        <div class="round round-1"
+          data-title="Round 1">
+
+          <div class="match">
+            <div class="player winner"
+            data-score="21"
+            data-seed="1">Mario</div>
+            <div class="player"
+            data-score="19"
+            data-seed="16">Donkey Kong</div>
+          </div>
+
+          <div class="match">
+            <div class="player winner"
+            data-seed="8"
+            data-score="21">Bowser</div>
+            <div class="player"
+            data-seed="9"
+            data-score="15">Toad</div>
+          </div>
+
+          <div class="match">
+            <div class="player" data-seed="4">Wario</div>
+            <div class="player" data-seed="13">Dry Bones</div>
+          </div>
+
+          <div class="match">
+            <div class="player" data-seed="5">Luigi</div>
+            <div class="player" data-seed="12">Waluigi</div>
+          </div>
+
+          <div class="match">
+            <div class="player" data-seed="2">Koopa Troopa</div>
+            <div class="player" data-seed="15">Goomba</div>
+          </div>
+
+          <div class="match">
+            <div class="player" data-seed="7">Yoshi</div>
+            <div class="player winner" data-seed="10">Birdo</div>
+          </div>
+
+          <div class="match">
+            <div class="player" data-seed="3">Rosalina</div>
+            <div class="player" data-seed="14">King Boo</div>
+          </div>
+
+          <div class="match">
+            <div class="player" data-seed="6">Diddy Kong</div>
+            <div class="player" data-seed="11">Chomp</div>
+          </div>
+
         </div>
 
-        <div class="match">
-          <div class="player">Bowser</div>
-          <div class="player">Toad</div>
+        <div class="round round-2"
+          data-title="Quarters">
+
+          <div class="match">
+            <div class="player" data-seed="1">Mario</div>
+            <div class="player" data-seed="8">Bowser</div>
+          </div>
+
+          <div class="match">
+            <div class="player"></div>
+            <div class="player"></div>
+          </div>
+
+          <div class="match">
+            <div class="player"></div>
+            <div class="player" data-seed="10">Birdo</div>
+          </div>
+
+          <div class="match">
+            <div class="player"></div>
+            <div class="player"></div>
+          </div>
+
         </div>
 
-        <div class="match">
-          <div class="player">Wario</div>
-          <div class="player">Dry Bones</div>
+        <div class="round round-3"
+          data-title="Semis">
+
+          <div class="match">
+            <div class="player"></div>
+            <div class="player"></div>
+          </div>
+
+          <div class="match">
+            <div class="player"></div>
+            <div class="player"></div>
+          </div>
+
         </div>
 
-        <div class="match">
-          <div class="player">Luigi</div>
-          <div class="player">Waluigi</div>
-        </div>
+        <div class="round round-4 round-final"
+          data-title="Final">
 
-        <div class="match">
-          <div class="player">Koopa Troopa</div>
-          <div class="player">Goomba</div>
-        </div>
+          <div class="match">
+            <div class="player"></div>
+            <div class="player"></div>
+          </div>
 
-        <div class="match">
-          <div class="player">Yoshi</div>
-          <div class="player">Birdo</div>
-        </div>
-
-        <div class="match">
-          <div class="player">Rosalina</div>
-          <div class="player">King Boo</div>
-        </div>
-
-        <div class="match">
-          <div class="player">Diddy Kong</div>
-          <div class="player">Chomp</div>
-        </div>
-
-      </div>
-
-      <div class="round round-of-8">
-
-        <div class="match">
-          <div class="player">Mario</div>
-          <div class="player">Bowser</div>
-        </div>
-
-        <div class="match">
-          <div class="player"></div>
-          <div class="player"></div>
-        </div>
-
-        <div class="match">
-          <div class="player"></div>
-          <div class="player">Birdo</div>
-        </div>
-
-        <div class="match">
-          <div class="player"></div>
-          <div class="player"></div>
-        </div>
-
-      </div>
-
-      <div class="round round-of-4">
-
-        <div class="match">
-          <div class="player"></div>
-          <div class="player"></div>
-        </div>
-
-        <div class="match">
-          <div class="player"></div>
-          <div class="player"></div>
-        </div>
-
-      </div>
-
-      <div class="round round-of-2 round-final">
-
-        <div class="match">
-          <div class="player"></div>
-          <div class="player"></div>
         </div>
 
       </div>
@@ -110,6 +138,9 @@
 
   <footer>
   </footer>
+
+  <script src="assets/zepto.min.js"></script>
+  <script src="dist/js/header.js"></script>
 
 </body>
 </html>
