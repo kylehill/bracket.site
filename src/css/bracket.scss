@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../../assets/actionshot.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  height: 95vh;
+  position: relative;
+
+  background: rgba(204, 204, 204, .9);
+}
+
+main {
+  min-height: 100vh;
+  position: relative;
+
+  background: rgba(51, 51, 51, .95);
+}
+
+.bracket-view {
+  font-size: 0px;
+
+  &.tournament-rounds-4 {
+
+    .round {
+      width: 25%;
+    }
+
+  }
+
+  .round {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .round-of-8 .match {
+    height: calc(100vh / 4);
+  }
+  .round-of-4 .match {
+    height: calc(100vh / 2);
+  }
+  .round-of-2 .match {
+    height: calc(100vh / 1);
+  }
+
+  .match {
+    height: calc(100vh / 8);
+    position: relative;
+    left: 7.5%;
+    width: 85%;
+    padding: 0;
+  }
+
+  .player {
+    position: absolute;
+    top: calc(50% - .75em);
+    padding: 0 10px;
+    transform: translateY(-50%);
+    width: 100%;
+    font-size: 18px;
+    color: black;
+    height: 1.5em;
+    line-height: 1.5em;
+    background: rgba(201, 201, 201, 1);
+
+    &:last-child {
+      border-top: solid 1px black;
+      top: calc(50% + .75em);
+    }
+  }
+
+}
+
